@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Docs pointergenerator - My Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Docs pointergenerator";
+    var mkdocs_page_input_path = "docs-pointergenerator.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> My Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">한국어 문서요약</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../BERTSUM/">BertSum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Neusum/">Neusum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../PointerGenerator/">PointerGenerator</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../TextRank/">TextRank</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Docs pointergenerator</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#__init__">__init__</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get_vocab">get_vocab</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_1">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#returns">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#src2idx">src2idx</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_2">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#returns_1">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tgt2idx">tgt2idx</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_3">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#returns_2">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#idx2word">idx2word</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_4">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#returns_3">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#__len__">__len__</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#returns_4">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#__getitem__">__getitem__</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters_5">Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#returns_5">Returns</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">My Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Docs pointergenerator</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <ul>
+<li><a href="https://arxiv.org/abs/1704.04368">Get To The Point: Summarization with Pointer-Generator Networks
+</a></li>
+</ul>
+<p><img src="./img/model.png" width="100%"></p>
+<p>사용하는 데이터는 아래와 같은 형식을 갖습니다.</p>
+<pre><code class="language-json">{
+    &quot;media&quot;: &quot;AA일보&quot;,
+    &quot;id&quot;: &quot;123456789&quot;,
+    &quot;article_original&quot;:
+        [
+        &quot;오늘 아침 미확인 비행물체가 등장했습니다.&quot;,
+        &quot;서울 근교의 한 숲에서 관측되었습니다.&quot;,
+        &quot;미확인 비행물체는 최근 들어 많이 관측되고 있습니다.&quot;,
+        &quot;시민들은 호기심보다 불안한 마음을 갖고 있습니다.&quot;,
+        &quot;서울시는 해당 물체에 대한 조사를 한다는 입장문을 밝혔습니다.&quot;,
+        &quot;미확인 비행물체가 앞으로 더 등장할 지 의문입니다.&quot;,
+        ],
+    &quot;abstractive&quot;: &quot;갑작스레 등장한 미확인 비행물체가 서울시민을 불안하게 만들고 있다.&quot;,
+    &quot;extractive&quot;: [0, 3, 4]
+}
+
+</code></pre>
+<hr />
+<h1 id="textdataset">TextDataset</h1>
+<h2 id="__init__">__init__</h2>
+<blockquote>
+<p>path(str),
+max_vocab(int) = 50000,
+mode(str) = "train",
+vocab_dir(str) = None,
+use_sentencepiece(bool) = True</p>
+</blockquote>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li>path: train/eval/test 데이터셋의 경로</li>
+<li>max_vocab: 어휘 사전의 최대 개수</li>
+<li>mode: train/eval/test 모드</li>
+<li>vocab_dir: 기존에 생성된 어휘 사전의 경로</li>
+<li>use_sentencepiece: Sentencepiece 또는 Mecab 사용 여부 결정</li>
+</ul>
+<h2 id="get_vocab">get_vocab</h2>
+<blockquote>
+<p>src(List[List[str]])</p>
+</blockquote>
+<p>주어진 문서로부터 어휘 사전을 생성함</p>
+<h3 id="parameters_1">Parameters</h3>
+<ul>
+<li>src: 주어진 전체 문서 리스트</li>
+</ul>
+<h3 id="returns">Returns</h3>
+<ol>
+<li>vocab(dict): 문서로부터 생성된 어휘 사전</li>
+</ol>
+<h2 id="src2idx">src2idx</h2>
+<blockquote>
+<p>src_sentence(List[str])</p>
+</blockquote>
+<p>주어진 문장으로부터 단어 인덱스 리스트, OOV가 등장한 위치를 저장하는 사전을 생성함</p>
+<h3 id="parameters_2">Parameters</h3>
+<ul>
+<li>src_sentence: 원본 문장</li>
+</ul>
+<h3 id="returns_1">Returns</h3>
+<ol>
+<li>idcs(list): 인덱스로 변환된 원본 문장, </li>
+<li>oov_vocabs(dict): OOV가 등장한 위치 인덱스</li>
+<li>Example
+    &gt; {'oov_word_1': [idx_1], 'oov_word_2':[idx_2], ...}</li>
+</ol>
+<h2 id="tgt2idx">tgt2idx</h2>
+<blockquote>
+<p>tgt_sentence(List[str]),
+src_oov_vocabs(List[str])</p>
+</blockquote>
+<p>주어진 요약문으로부터 단어 인덱스 리스트, OOV가 등장한 위치를 저장하는 사전을 생성함 (단, 원본 문장에 해당 OOV가 등장했을 때에만 사전에 저장)</p>
+<h3 id="parameters_3">Parameters</h3>
+<ul>
+<li>tgt_sentence: 요약문</li>
+<li>src_oov_vocabs: 원본 문장에 등장한 OOV 사전</li>
+</ul>
+<h3 id="returns_2">Returns</h3>
+<ol>
+<li>idcs(list): 인덱스로 변환된 요약문(Decoding 시작과 끝에 해당하는 special token 포함)</li>
+<li>oov_vocabs(dict): 원본 문장과 요약문에 함께 등장하는 OOV 단어 사전</li>
+</ol>
+<h2 id="idx2word">idx2word</h2>
+<blockquote>
+<p>sentence(List[str])</p>
+</blockquote>
+<p>인덱스를 단어(토큰)로 바꾸어 줌</p>
+<h3 id="parameters_4">Parameters</h3>
+<ul>
+<li>sentence(List[int] or torch.Tensor): 인덱스로 구성된 문장</li>
+</ul>
+<h3 id="returns_3">Returns</h3>
+<ol>
+<li>converted_sentence(List[str]): 단어(토큰)로 변환된 문장</li>
+</ol>
+<h2 id="__len__">__len__</h2>
+<p>데이터셋의 길이를 반환</p>
+<h3 id="returns_4">Returns</h3>
+<ol>
+<li>length(int): 데이터셋의 길이</li>
+</ol>
+<h2 id="__getitem__">__getitem__</h2>
+<blockquote>
+<p>idx(int)</p>
+</blockquote>
+<p>인덱스에 해당하는 데이터를 반환</p>
+<h3 id="parameters_5">Parameters</h3>
+<ul>
+<li>idx(int): 데이터셋의 특정 인덱스</li>
+</ul>
+<h3 id="returns_5">Returns</h3>
+<ol>
+<li>src[idx]: Tokenize 후 인덱스로 변환된 원본 문장</li>
+<li>tgt[idx]: Tokenize 후 인덱스로 변환된 요약문</li>
+<li>src_oov_vocabs[idx]: 원본 문장에 등장한 OOV 사전</li>
+<li>tgt_oov_vocabs[idx]: 원본 문장과 요약문에 함께 등장하는 OOV 단어 사전</li>
+</ol>
+<hr />
+<h1 id="pointergenerator">PointerGenerator</h1>
+<h2 id="__init___1">__init__</h2>
+<blockquote>
+<p>train_path(str),
+validation_path(str),
+use_sentencepiece(bool),
+vocab_size(int),
+embed_dim(int),
+hidden_dim(int),
+num_encoder_layer(int),
+max_len(int),
+max_decoder_step(int),
+lr(float),
+train_batch_size(int),
+eval_batch_size(int), 
+ptr_gen(bool),
+coverage(bool),
+cov_loss_lambda(float),
+vocab_path(str) = None,
+test_path(str) = None</p>
+</blockquote>
+<h3 id="parameters_6">Parameters</h3>
+<ul>
+<li>train_path: 학습 데이터 경로</li>
+<li>validation_path: 검증 데이터 경로</li>
+<li>use_sentencepiece: Sentencepiece 또는 Mecab 사용 여부 결정</li>
+<li>vocab_size: 어휘 사전 크기</li>
+<li>embed_dim: 단어 임베딩 크기</li>
+<li>hidden_dim: 신경망 은닉층 크기</li>
+<li>num_encoder_layer: 인코더의 층 개수</li>
+<li>max_len: 문장의 최대 길이</li>
+<li>max_decoder_step: 디코더에 의해 생성되는 문장의 최대 길이</li>
+<li>lr: 학습율(learning rate)</li>
+<li>train_batch_size: 학습 배치 크기</li>
+<li>eval_batch_size: 검증 배치 크기</li>
+<li>ptr_gen: pointer-generator 모델 사용</li>
+<li>coverage: coverage mechanism 적용</li>
+<li>cov_loss_lambda: coverage loss의 강도 조절 계수</li>
+<li>vocab_path: 기존에 생성된 어휘 사전의 경로</li>
+<li>test_path: 평가(테스트) 데이터 경로</li>
+</ul>
+<h2 id="forward">forward</h2>
+<blockquote>
+<p>src(torch.tensor),
+tgt_input(torch.tensor),
+src_len(torch.tensor),
+src_padding_mask(torch.tensor),
+vocab(dict),
+src_oov(torch.tensor),
+content_selection(torch.tensor) = None</p>
+</blockquote>
+<h3 id="parameters_7">Parameters</h3>
+<ul>
+<li>src: </li>
+<li>tgt_input:</li>
+<li>src_len:</li>
+<li>src_padding_mask:</li>
+<li>vocab:</li>
+<li>src_oov:</li>
+<li>content_selection:</li>
+</ul>
+<h3 id="returns_6">Returns</h3>
+<h2 id="training_step">training_step</h2>
+<h2 id="validation_step">validation_step</h2>
+<h2 id="validation_epoch_end">validation_epoch_end</h2>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../TextRank/" class="btn btn-neutral" title="TextRank"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../TextRank/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
