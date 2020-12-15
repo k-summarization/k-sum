@@ -673,9 +673,9 @@
                 
                 
                 <h1 id="presumm">Presumm</h1>
-<h3 id="1-overview">1. Overview</h3>
+<h2 id="1-overview">1. Overview</h2>
 <p>Presumm은 Bertsum의 저자가 발표한 후속 논문으로, Extractive summarization을 목적으로 한 Bertsum을 활용하여 <strong>Extractive summarization model</strong>과 <strong>Abstractive summarization</strong>이 모두 가능한 두가지 모델을 제안한다.</p>
-<h5 id="1-presumm-for-extractive-summarization">1) Presumm for Extractive summarization</h5>
+<h4 id="1-presumm-for-extractive-summarization">1) Presumm for Extractive summarization</h4>
 <ul>
 <li>
 <p>기존의 BERT input과 다르게 모든 문장 앞뒤에 <strong>[CLS], [SEP]</strong> token을 배치함</p>
@@ -686,7 +686,7 @@
 <li>KoBERT의 아웃풋 벡터를 모두 사용하지 않고 CLS token의 Top vector만 사용하여 Transformer Encoder Layer를 통과함 (사용한 레이어 갯수는 2개)</li>
 </ul>
 <p><img src="/Users/yukyung/Library/Application Support/typora-user-images/image-20201202123208442.png" alt="image-20201202123208442" style="zoom:30%;" /></p>
-<h5 id="2-presumm-for-abstractive-summarization">2) Presumm for Abstractive summarization</h5>
+<h4 id="2-presumm-for-abstractive-summarization">2) Presumm for Abstractive summarization</h4>
 <ul>
 <li>Encoder는 KoBERT 혹은 Pretrained Extractive Summarization Model을 사용하고, Decoder는 Transformer Decoder를 사용하는 모델 구조</li>
 <li>Encoder의 Input은 Extractive model과 동일하게 하나의 문장 앞뒤에 <strong>[CLS], [SEP]</strong> token을 붙임</li>
@@ -695,7 +695,7 @@
 <li>Beam search를 활용하여 최종 Output vocab을 찾아냄</li>
 </ul>
 <p><img alt="image-20201202131749085" src="/Users/yukyung/Library/Application Support/typora-user-images/image-20201202131749085.png" /></p>
-<h3 id="2-code-scheme">2. Code scheme</h3>
+<h2 id="2-code-scheme">2. Code scheme</h2>
 <pre><code class="language-python">Presumm
 ├── requirements.txt
 ├── utils
@@ -717,7 +717,7 @@
 │   ├── abs_generate.py
 │   └── train.sh
 </code></pre>
-<h3 id="3-utils">3. Utils</h3>
+<h2 id="3-utils">3. Utils</h2>
 <h4 id="1-datasetpy">1) dataset.py</h4>
 <blockquote>
 <p><em>Class</em> <strong>Bertsum_Dataset</strong>  </p>
@@ -948,7 +948,7 @@
 <li>ext_labels : greedy selection을 진행한 extractive summarization label</li>
 </ul>
 </blockquote>
-<h3 id="4-ext-extractive-summarization">4. Ext - Extractive Summarization</h3>
+<h2 id="4-ext-extractive-summarization">4. Ext - Extractive Summarization</h2>
 <p>사용되는 코드는 크게 4개로 다음과 같은 구조와 목적을 갖고 있다. </p>
 <ul>
 <li>modeling_bertext: Extractive Summarization Model</li>
@@ -1174,7 +1174,7 @@
 <p><code>str_scores</code></p>
 </blockquote>
 <p>format_rouge_scores로 ROUGE SCORE를 Formatting한 결과를 받아 txt file로 저장</p>
-<h3 id="5-abs-abstractive-summarization">5. Abs - Abstractive Summarization</h3>
+<h2 id="5-abs-abstractive-summarization">5. Abs - Abstractive Summarization</h2>
 <p>사용되는 코드는 크게 5개로 다음과 같은 구조를 가지고있으며 modeling_bertabs는 abstractive summarization을 위한 모델이, abs_trainer와 abs_train은 학습 과정에 필요한 전반적인 코드를, abs_generate와 abs_inference는 추론 과정에서 필요한 전반적인 코드를 나타낸다.</p>
 <p><img src="/Users/yukyung/Library/Application Support/typora-user-images/image-20201208090311538.png" alt="image-20201208090311538" style="zoom:30%;" /></p>
 <h4 id="1-modeling_bertabspy">1) modeling_bertabs.py</h4>
