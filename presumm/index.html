@@ -685,7 +685,7 @@
 </li>
 <li>KoBERT의 아웃풋 벡터를 모두 사용하지 않고 CLS token의 Top vector만 사용하여 Transformer Encoder Layer를 통과함 (사용한 레이어 갯수는 2개)</li>
 </ul>
-<p><img src="/Users/yukyung/Library/Application Support/typora-user-images/image-20201202123208442.png" alt="image-20201202123208442" style="zoom:30%;" /></p>
+<p><img alt="70D5C5A1-62E3-46BF-9DE8-F461FDCD70E0_1_105_c" src="../presumm.assets/70D5C5A1-62E3-46BF-9DE8-F461FDCD70E0_1_105_c.jpeg" /></p>
 <h4 id="2-presumm-for-abstractive-summarization">2) Presumm for Abstractive summarization</h4>
 <ul>
 <li>Encoder는 KoBERT 혹은 Pretrained Extractive Summarization Model을 사용하고, Decoder는 Transformer Decoder를 사용하는 모델 구조</li>
@@ -694,7 +694,7 @@
 <li>Extractive model과 다르게 Document 전체 벡터를 모두 활용하여 Decoder에 넣어줌 </li>
 <li>Beam search를 활용하여 최종 Output vocab을 찾아냄</li>
 </ul>
-<p><img alt="image-20201202131749085" src="/Users/yukyung/Library/Application Support/typora-user-images/image-20201202131749085.png" /></p>
+<p><img alt="5D4D60FB-BE71-4455-B650-A9D1F7342650" src="../presumm.assets/5D4D60FB-BE71-4455-B650-A9D1F7342650.jpeg" /></p>
 <h2 id="2-code-scheme">2. Code scheme</h2>
 <pre><code class="language-python">Presumm
 ├── requirements.txt
@@ -1168,7 +1168,7 @@
 <p><code>scores</code></p>
 </blockquote>
 <p>Rouge-(1,2,L) 점수를 모두 Dictionary로 갖고 있는 scores를 Input으로 받아, 아래의 예시와 같은 꼴로 Return</p>
-<p><img src="G:\내 드라이브\path\extractive_docs.assets\image-20201209104658002.png" alt="image-20201209104658002" style="zoom: 67%;" /></p>
+<p><img src="presumm.assets/image-20201215115753515.png" alt="image-20201215115753515" style="zoom:50%;" /></p>
 <blockquote>
 <p><em>def</em> <strong>save_rouge_scores</strong></p>
 <p><code>str_scores</code></p>
@@ -1176,7 +1176,7 @@
 <p>format_rouge_scores로 ROUGE SCORE를 Formatting한 결과를 받아 txt file로 저장</p>
 <h2 id="5-abs-abstractive-summarization">5. Abs - Abstractive Summarization</h2>
 <p>사용되는 코드는 크게 5개로 다음과 같은 구조를 가지고있으며 modeling_bertabs는 abstractive summarization을 위한 모델이, abs_trainer와 abs_train은 학습 과정에 필요한 전반적인 코드를, abs_generate와 abs_inference는 추론 과정에서 필요한 전반적인 코드를 나타낸다.</p>
-<p><img src="/Users/yukyung/Library/Application Support/typora-user-images/image-20201208090311538.png" alt="image-20201208090311538" style="zoom:30%;" /></p>
+<p><img alt="C6C5B61C-4001-4EA0-9260-582F1A822EFF_1_105_c" src="../presumm.assets/C6C5B61C-4001-4EA0-9260-582F1A822EFF_1_105_c.jpeg" /></p>
 <h4 id="1-modeling_bertabspy">1) modeling_bertabs.py</h4>
 <p>Abstractive 를 위한 모델은 <strong>BertAbs</strong>  class 내부에 정의되어있으며 모델의 구조는 Presumm 저자코드를 기반으로 하되 한국어 모델을 구현하는 과정에서 몇가지 부분을 수정하였음 </p>
 <blockquote>
